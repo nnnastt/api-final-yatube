@@ -47,7 +47,6 @@ python -m venv .venv
 
 
 pip install -r requirements.txt
->>>>>>> a028759ebe30211b0d07e362d8a56d65db0c162a
 
 
 
@@ -60,3 +59,7 @@ pip install -r requirements.txt
 
 пример поста
 <img width="590" height="532" alt="image" src="https://github.com/user-attachments/assets/e3cd4a3c-151d-4382-8b3a-f847d5e85705" />
+
+Автор
+
+https://github.com/nnnastt

@@ -9,7 +9,8 @@ from api.serializers import (
     GroupSerializer,
     PostSerializer,
 )
-from posts.models import Comment, Follow, Group, Post
+from posts.models import Group, Post
+
 
 class PostViewSet(viewsets.ModelViewSet):
     """ViewSet для модели Post."""

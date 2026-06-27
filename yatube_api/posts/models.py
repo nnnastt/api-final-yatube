@@ -1,10 +1,15 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.utils import timezone
+
+from .constants import TEXT_SIZE_POST
 
 User = get_user_model()
 
 
 class Group(models.Model):
+    """Модель группы."""
+
     title = models.CharField(max_length=200, verbose_name='Название')
     slug = models.SlugField(unique=True, verbose_name='Слаг')
     description = models.TextField(verbose_name='Описание')
@@ -19,6 +24,7 @@ class Group(models.Model):
 
 class Post(models.Model):
     """Модель поста."""
+
     text = models.TextField(verbose_name='Текст поста')
     pub_date = models.DateTimeField(
         'Дата публикации',
@@ -50,13 +56,15 @@ class Post(models.Model):
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
         ordering = ('-pub_date',)
+        default_related_name = 'posts'
 
     def __str__(self):
-        return self.text[:50]
+        return self.text[:TEXT_SIZE_POST]
 
 
 class Comment(models.Model):
     """Модель комментария."""
+
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -80,6 +88,7 @@ class Comment(models.Model):
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
         ordering = ('created',)
+        default_related_name = 'comments'
 
     def __str__(self):
         return f'Комментарий от {self.author.username}'
@@ -87,21 +96,22 @@ class Comment(models.Model):
 
 class Follow(models.Model):
     """Модель подписки."""
+
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='follower',
+        related_name='follows',
         verbose_name='Подписчик'
     )
     following = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='following',
+        related_name='followers',
         verbose_name='Автор'
     )
     created = models.DateTimeField(
         'Дата подписки',
-        auto_now_add=True,
+        default=timezone.now,
         db_index=True
     )
 

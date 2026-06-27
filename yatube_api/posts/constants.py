@@ -1,0 +1,1 @@
+TEXT_SIZE_POST = 50

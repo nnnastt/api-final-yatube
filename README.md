@@ -11,6 +11,7 @@ API Yatube предоставляет возможности:
 - Просмотр ленты постов
 - Поиск по подпискам
 
+<<<<<<< HEAD
 Проект построен на Django REST Framework с использованием JWT-аутентификации.
 
 ## Технологии
@@ -22,6 +23,8 @@ API Yatube предоставляет возможности:
 - SQLite (разработка) / PostgreSQL (продакшн)
 - Pillow (обработка изображений)
 
+=======
+>>>>>>> a028759ebe30211b0d07e362d8a56d65db0c162a
 ## Установка
 
 ### Клонировать репозиторий
@@ -30,5 +33,18 @@ API Yatube предоставляет возможности:
 git clone https://github.com/your-username/api-final-youtube.git
 cd api-final-youtube
 
+<<<<<<< HEAD
 
+=======
+### Создать виртуальное окружение
+
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate
+
+### Установить зависимости
+
+```bash
+pip install -r requirements.txt
+>>>>>>> a028759ebe30211b0d07e362d8a56d65db0c162a
 

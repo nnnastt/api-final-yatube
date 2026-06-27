@@ -29,4 +29,6 @@ API Yatube предоставляет возможности:
 ```bash
 git clone https://github.com/your-username/api-final-youtube.git
 cd api-final-youtube
-<img width="458" height="352" alt="image" src="https://github.com/user-attachments/assets/61b839cf-2626-4a87-b0a1-f686c2b8372d" />
+
+
+
